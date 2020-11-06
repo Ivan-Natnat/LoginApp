@@ -19,7 +19,7 @@ class FiveTaskActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnStartTimer).setOnClickListener {startTimer(
             "GISING NA POGI," +
                     "PASENSYA KA NA!!! GODBLESS<3",
-            10
+            5
         )}
         findViewById<Button>(R.id.btnAnswer).setOnClickListener {answer()}
         findViewById<Button>(R.id.btnCallMe).setOnClickListener {callme()}

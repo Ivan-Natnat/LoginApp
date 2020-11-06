@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -15,7 +16,13 @@ class FiveTaskActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnGotoWWW).setOnClickListener {openWebsite()}
         findViewById<Button>(R.id.btnGoogleMap).setOnClickListener {runGoogleMap()}
-        findViewById<Button>(R.id.btnStartTimer).setOnClickListener {startTimer("GISING NA PAKYU",10)}
+        findViewById<Button>(R.id.btnStartTimer).setOnClickListener {startTimer(
+            "GISING NA POGI," +
+                    "PASENSYA KA NA!!! GODBLESS<3",
+            10
+        )}
+        findViewById<Button>(R.id.btnAnswer).setOnClickListener {answer()}
+        findViewById<Button>(R.id.btnCallMe).setOnClickListener {callme()}
     }
     private fun openWebsite() {
         val intent1 = Intent(Intent.ACTION_WEB_SEARCH)
@@ -40,6 +47,16 @@ class FiveTaskActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    private fun answer(){
+//      Post an intent to reload
+        val intent = Intent(Intent.ACTION_ANSWER)
+        Toast.makeText(this,"PASENSYA KA NA, GODBLESS DI GUMAGANA",Toast.LENGTH_LONG).show()
+        sendBroadcast(intent)
+    }
+    private fun callme(){
+        val intent = Intent(Intent.ACTION_CALL)
+        Toast.makeText(this,"PASENSYA KA NA, GODBLESS DI GUMAGANA",Toast.LENGTH_LONG).show()
+        startActivity(intent)
+    }
 
 }
